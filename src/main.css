@@ -18,6 +18,11 @@
     font-size: 120%;
     font-family: 'Sofia Sans Condensed';
     color: #e2e2e2;
+    z-index: 0%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
 }
 
 p,input{
@@ -108,7 +113,6 @@ h1{
     color: rgba(255,255,255,0.7);
 }
 
-  /* Кнопка рассчитать */
 button {
     background-color: #9e0000;
     color: white;
@@ -128,4 +132,43 @@ button {
 button:hover {
     background-color: #fa0000;
     box-shadow: 0 0 25px #fa0000;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 5%;
+    }
+    .jimlezha {
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+    .jimlezha1 {
+        width: 90%;
+        font-size: 1rem;
+        padding: 10px;
+    }
+    button {
+        width: 70%;
+        font-size: 1rem;
+        padding: 8px 1.5rem;
+    }
+}
+
+.madeby {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 10px 20px;
+    z-index: 9999;
+    font-size: 50%;
+    opacity: 50%;
+    margin-bottom: 0px;
+}
+body {
+    height: 1000px; /* желаемая высота страницы */
+    overflow: hidden; /* скрывает всё, что выходит за границы */
+    margin-top: -4%;
 }

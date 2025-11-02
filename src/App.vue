@@ -8,7 +8,7 @@
       <input type="text" class="jimlezha1" v-model="weight" />
     </div>
 
-    <p class="jimlezha">Ваш жим</p>
+    <p class="jimlezha">Вес штанги</p>
     <div class="contjim2">
       <input type="text" class="jimlezha1" v-model="press" />
     </div>
@@ -23,6 +23,11 @@
     </div>
 
     <p class="jimlezha3">Ваш разовый максимум: {{ maxPress }}</p>
+    <div class="madeby">
+      <p>Made by: crymorebro</p>
+      <a href="https://github.com/crymorebro/crymorebro.github.io">Github</a>  
+      <a href="https://t.me/crymorebro"> Telegram</a>
+    </div>
   </div>
 </template>
 
@@ -40,16 +45,14 @@ export default {
   },
   methods: {
     calculateMax() {
-      const weightNum = parseFloat(this.weight);
       const pressNum = parseFloat(this.press);
       const repsNum = parseInt(this.reps);
-
-      if (!isNaN(weightNum) && !isNaN(pressNum) && !isNaN(repsNum)) {
-        this.maxPress = (pressNum * (1 + repsNum / 30)).toFixed(2);
+      if (!isNaN(pressNum) && !isNaN(repsNum)) {
+        this.maxPress = ((pressNum * repsNum) / 30 + pressNum).toFixed(2);
       } else {
         this.maxPress = 'Некорректные данные';
       }
-    }
+}
   },
   mounted() {
     this.gradient = new Gradient();

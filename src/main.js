@@ -10,4 +10,3 @@ const gradient = new Gradient()
 gradient.initGradient('#gradient-canvas')
 
 createApp(App).mount('#app')
-
